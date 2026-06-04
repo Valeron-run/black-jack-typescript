@@ -1,0 +1,228 @@
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  background-color: #0f172a;
+  color: #f8fafc;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.container {
+  width: 100%;
+  max-width: 900px;
+  padding: 2rem;
+}
+
+h1 {
+  text-align: center;
+  color: #38bdf8;
+  margin-bottom: 2rem;
+}
+
+.dashboard {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  background: #1e293b;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+}
+
+.control-group {
+  background: #334155;
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+label {
+  font-weight: bold;
+  font-size: 0.9rem;
+  color: #94a3b8;
+}
+
+input {
+  padding: 0.8rem;
+  border-radius: 4px;
+  border: 1px solid #475569;
+  background: #0f172a;
+  color: white;
+  font-size: 1rem;
+}
+
+button {
+  padding: 0.8rem 1rem;
+  border: none;
+  border-radius: 4px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: opacity 0.2s;
+  font-size: 1rem;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+.btn-primary { background: #0ea5e9; color: white; }
+.btn-warning { background: #f59e0b; color: white; }
+.btn-success { background: #10b981; color: white; }
+.btn-danger { background: #ef4444; color: white; }
+
+.btn-row {
+  display: flex;
+  gap: 1rem;
+}
+.btn-row button {
+  flex: 1;
+}
+
+.terminal {
+  background: #000;
+  border-radius: 8px;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  border: 2px solid #22c55e;
+}
+
+.terminal h3 {
+  margin-top: 0;
+  color: #22c55e;
+  border-bottom: 1px solid #22c55e;
+  padding-bottom: 0.5rem;
+}
+
+.log-window {
+  flex-grow: 1;
+  overflow-y: auto;
+  max-height: 400px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.log-entry {
+  color: #e2e8f0;
+  font-size: 0.9rem;
+  word-break: break-all;
+}
+
+.empty-log {
+  color: #64748b;
+  font-style: italic;
+}
+/* --- Стили для стола и карт --- */
+.game-table {
+  background: #0f172a;
+  border: 2px solid #334155;
+  border-radius: 8px;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.participant {
+  background: #1e293b;
+  padding: 1rem;
+  border-radius: 6px;
+}
+
+.participant h4 { margin-top: 0; color: #cbd5e1; }
+
+.cards-container {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.card {
+  background: white;
+  color: black;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  font-weight: bold;
+  font-size: 1.2rem;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.empty-cards { color: #64748b; font-style: italic; }
+
+button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  filter: grayscale(100%);
+}
+
+/* --- Стили для модального окна правил --- */
+.modal-overlay {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  backdrop-filter: blur(5px);
+}
+
+.modal-content {
+  background: #1e293b;
+  padding: 2.5rem;
+  border-radius: 12px;
+  max-width: 500px;
+  border: 1px solid #38bdf8;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.7);
+}
+
+.modal-content h2 { color: #38bdf8; margin-top: 0; }
+.modal-content ul { line-height: 1.6; color: #e2e8f0; margin-bottom: 2rem; }
+.modal-content li { margin-bottom: 0.5rem; }
+.modal-content button { width: 100%; font-size: 1.1rem; }
+
+/* --- Новые стили для хедера и баланса --- */
+.header-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.header-top h1 {
+  margin-bottom: 0;
+}
+
+.balance-badge {
+  background: #10b981;
+  color: white;
+  padding: 0.8rem 1.5rem;
+  border-radius: 8px;
+  font-size: 1.5rem;
+  font-weight: bold;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+  border: 2px solid #047857;
+}
+
+.bankrupt-badge {
+  background: #ef4444;
+  border-color: #b91c1c;
+}
+
+/* --- Цвета мастей --- */
+.text-red {
+  color: #ef4444; /* Красный для Червей и Бубен */
+}
+
+.text-black {
+  color: #0f172a; /* Темный для Пик и Треф (карта сама по себе белая) */
+}

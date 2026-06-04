@@ -1,0 +1,26 @@
+datasource db {
+  provider = "postgresql"
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+// Таблица пользователей и балансов
+model User {
+  id        String     @id @default(uuid())
+  username  String     @unique
+  balance   Int        @default(10000)
+  createdAt DateTime   @default(now())
+  rooms     GameRoom[]
+}
+
+// Таблица игровых комнат
+model GameRoom {
+  id        String   @id 
+  status    String   
+  gameState Json     
+  userId    String
+  user      User     @relation(fields: [userId], references: [id])
+  updatedAt DateTime @updatedAt
+}

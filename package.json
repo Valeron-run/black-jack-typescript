@@ -1,0 +1,16 @@
+{
+  "name": "gameblackjack",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "concurrently -c \"blue,green\" -n \"NEST,REACT\" \"npm run start:dev --prefix blackjsck-api\" \"npm run dev --prefix blackjack-client\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "concurrently": "^10.0.1"
+  }
+}
