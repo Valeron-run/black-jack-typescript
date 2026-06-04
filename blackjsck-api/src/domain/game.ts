@@ -1,5 +1,5 @@
 import { generationCard, fisherYates } from './cardCreation';
-import type { Card } from './types'; // Убедись, что путь правильный!
+import type { Card } from './types';
 
 // Интерфейс правил игры
 export interface BlackjackRuleSet {
@@ -165,7 +165,6 @@ export class GameSession {
         }
     }
 
-    // --- ВНУТРЕННЯЯ ЛОГИКА ---
 
     private advanceHand() {
         this.player.activeHandIndex++;
@@ -270,7 +269,7 @@ export class GameSession {
         this.deck = data.deck;
         this.player.money = data.player?.money || 10000;
         
-        // ИСПРАВЛЕНИЕ: Блок совместимости со старыми играми в PostgreSQL
+
         if (data.player?.hands) {
             this.player.hands = data.player.hands.map((h: any) => new PlayerHand(h.cards, h.bet, h.isFinished));
             this.player.activeHandIndex = data.player.activeHandIndex;
