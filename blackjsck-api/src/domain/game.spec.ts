@@ -8,14 +8,13 @@ describe('Blackjack GameSession Logic', () => {
             { suit: 'Spades', rank: '9', value: 9 },   // Карта на вторую руку
             { suit: 'Hearts', rank: '10', value: 10 }, // Карта на первую руку
             { suit: 'Clubs', rank: '5', value: 5 },    // Карта дилеру
-            { suit: 'Diamonds', rank: '8', value: 8 }, // Игроку: 8 (ПАРА!)
+            { suit: 'Diamonds', rank: '8', value: 8 }, // Игроку: 8 
             { suit: 'Spades', rank: '10', value: 10 }, // Карта дилеру
             { suit: 'Hearts', rank: '8', value: 8 }    // Игроку: 8 
         ];
 
         const game = new GameSession(AmericanRules);
-        
-        // МАГИЯ ТЕСТОВ: Напрямую перезаписываем приватную колоду нашей крапленой!
+
         (game as any).deck = riggedDeck;
         
         // Теперь при старте игры она возьмет карты из нашей колоды
